@@ -1,0 +1,316 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "blog": "Blog",
+    "readingList": "Lista de Leitura",
+    "bookshelf": "Estante",
+    "toggleMenuAria": "Alternar menu"
+  },
+  "header": {
+    "profileAlt": "Foto de perfil",
+    "name": "Thiago Costa",
+    "email": "tabrantedaco2023[at]fau[dot]edu",
+    "bio": "Mestrado em IA na Florida Atlantic University. Construindo soluções de IA, sistemas multiagentes e escalando conteúdo sobre Inteligência Artificial.",
+    "roleAi": "Engenheiro de IA.",
+    "roleCreator": "Criador de Conteúdo.",
+    "roleProduct": "Mentalidade de Produto.",
+    "instagramSiegTitle": "Instagram @sieg.ia",
+    "githubTitle": "GitHub",
+    "linkedinTitle": "LinkedIn",
+    "instagramThiagoTitle": "Instagram @thiago.sieg",
+    "themeTitle": "Tema atual: {{theme}}. Clique para alternar.",
+    "themeAria": "Alternar tema de cores",
+    "langToggleAria": "Alternar idioma",
+    "langLabel": "PT"
+  },
+  "tldr": {
+    "heading": "TL;DR",
+    "currently": "Atualmente eu estou...",
+    "degreeLink": "cursando Mestrado em IA na Florida Atlantic University",
+    "buildingAt": ", construindo produtos de IA na",
+    "and": "e",
+    "followersEnd": ", e criando conteúdo sobre IA para mais de 100 mil seguidores."
+  },
+  "about": {
+    "introP1": "Sou um engenheiro de IA brasileiro e mestrando na Florida Atlantic University, apaixonado por transformar conceitos complexos de IA em produtos práticos. De sistemas multiagentes e pipelines RAG a modelos de deep learning, adoro conectar pesquisa a soluções do mundo real.",
+    "introP2": "Além da engenharia, acredito no poder da comunicação. Através do SIEG IA, traduzo temas de IA de ponta em conteúdo acessível para uma comunidade de mais de 100 mil seguidores, combinando profundidade técnica com storytelling claro.",
+    "cardAiTitle": "IA & Machine Learning",
+    "cardAiBody": "Sistemas multiagentes, RAG, deep learning, NLP, engenharia de prompts e avaliação de modelos com PyTorch, LangChain e bancos vetoriais.",
+    "cardProductTitle": "Produto & Prototipagem",
+    "cardProductBody": "Desenvolvimento de protótipos ponta a ponta, conectando interfaces, orquestração e fluxos de saída em produtos funcionais com IA.",
+    "cardCommTitle": "Comunicação Técnica",
+    "cardCommBody": "Tornando temas complexos de IA acessíveis através da criação de conteúdo, conectando audiências técnicas e não técnicas com mais de 100M de visualizações em 2025.",
+    "followCta": "Seguir SIEG IA"
+  },
+  "work": {
+    "heading": "Experiência Profissional",
+    "netDate": "Nov 2025 – Presente",
+    "netCompany": "NET – Neurodiverse Educational Testing",
+    "netRole": "Engenheiro de IA · Startup",
+    "netDescP1": "Desenvolveu a Web UI e integrou uma arquitetura multiagente para triagem educacional assistida por IA. Implementou um agente conversacional com guardrails para coleta estruturada de contexto, um pipeline RAG com retrieval semântico e matching com base de conhecimento sobre transtornos de aprendizagem, e um gerador de relatórios em PDF com recomendações e encaminhamentos.",
+    "netDescP2": "Conectou interface, orquestração e fluxo de saída em um protótipo funcional. Projeto reconhecido com 2º lugar no FAU Agentic AI Hackathon 2025.",
+    "siegDate": "Mai 2025 – Presente",
+    "siegCompany": "SIEG IA",
+    "siegRole": "Criador & Gestor · Canal de Conteúdo sobre IA",
+    "siegDesc": "Construiu e escalou um canal de conteúdo focado em notícias e tendências de IA, alcançando mais de 100 mil seguidores e 100 milhões de visualizações em 2025. Transforma temas técnicos complexos em comunicação acessível, fortalecendo autoridade em IA e posicionamento de mercado.",
+    "siegLink": "@sieg.ia →"
+  },
+  "education": {
+    "heading": "Formação Acadêmica",
+    "fauLogo": "FAU",
+    "fauYears": "2024 – 2026",
+    "fauSchool": "Florida Atlantic University",
+    "fauDegree": "Mestrado em Inteligência Artificial · Boca Raton, FL, EUA",
+    "fauAchievement1Title": "2º Lugar – FAU Agentic AI Hackathon 2025",
+    "fauAchievement1Body": "Reconhecido pelo projeto NET, solução multiagente de IA para apoio educacional neurodiverso.",
+    "fauFocusTitle": "Áreas de Foco",
+    "fauFocusBody": "Sistemas multiagentes, RAG, deep learning, NLP e experimentação orientada por dados.",
+    "uffLogo": "UFF",
+    "uffMeYears": "2020 – 2022",
+    "uffSchool": "Universidade Federal Fluminense",
+    "uffMeDegree": "Bacharelado em Engenharia Mecânica · Volta Redonda, RJ, Brasil",
+    "uffMeAchievement1Title": "Equipe de Foguetes – Líder de Projeto",
+    "uffMeAchievement1Body": "Liderou uma equipe universitária de lançamento de foguetes, gerenciando design e execução.",
+    "uffMeAchievement2Title": "Monitor – Mecânica dos Fluidos",
+    "uffMeAchievement2Body": "Auxiliou no ensino e mentoria de alunos na disciplina de Mecânica dos Fluidos.",
+    "uffCpYears": "2017 – 2020",
+    "uffCpDegree": "Bacharelado em Física Computacional · Volta Redonda, RJ, Brasil",
+    "uffCpNoteTitle": "Transição para Engenharia",
+    "uffCpNoteBody": "Construiu uma base sólida em métodos computacionais, matemática e física antes de migrar para Engenharia Mecânica."
+  },
+  "skills": {
+    "heading": "Competências Técnicas",
+    "coreSkills": "Habilidades Principais",
+    "categoryAiMl": "IA & Machine Learning",
+    "categoryLibs": "Bibliotecas & Frameworks",
+    "categoryDataTools": "Dados & Ferramentas",
+    "levelAdvanced": "Avançado",
+    "levelProficient": "Proficiente",
+    "programmingLangs": "Linguagens",
+    "spokenLangs": "Idiomas",
+    "native": "Nativo",
+    "fluent": "Fluente",
+    "intermediate": "Intermediário"
+  },
+  "socials": {
+    "heading": "Redes Sociais",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "intro": "Acompanhe meu conteúdo sobre IA, projetos e dia a dia nas redes sociais!",
+    "siegTitle": "SIEG IA",
+    "siegInitials": "SI",
+    "siegName": "SIEG IA",
+    "siegHandle": "@sieg.ia",
+    "siegMeta": "100 mil+ seguidores · Conteúdo de IA",
+    "siegCta": "Seguir @sieg.ia",
+    "personalTitle": "Pessoal",
+    "personalInitials": "TC",
+    "personalName": "Thiago Costa",
+    "personalHandle": "@thiago.sieg",
+    "personalMeta": "Conta pessoal",
+    "personalCta": "Seguir @thiago.sieg",
+    "linkedinTitle": "LinkedIn",
+    "linkedinInitials": "TC",
+    "linkedinName": "Thiago Costa",
+    "linkedinPath": "/in/thiagosieg",
+    "linkedinCta": "Conectar no LinkedIn",
+    "footer": "Conecte-se comigo para atualizações sobre projetos de IA, conteúdo e oportunidades profissionais!"
+  },
+  "recentActivity": {
+    "heading": "Atividade Recente",
+    "hackathonTitle": "2º Lugar – FAU Agentic AI Hackathon 2025",
+    "tagAward": "Prêmio",
+    "tagMultiAgent": "IA Multiagente",
+    "tagHackathon": "Hackathon",
+    "hackathonBody": "Reconhecido pelo projeto NET, uma solução multiagente de IA para apoiar estudantes neurodivergentes e suas famílias através de triagem educacional assistida por IA, recuperação de conhecimento baseada em RAG e geração automatizada de relatórios.",
+    "speechTitle": "2º Lugar – Three Minutes International Speech Competition 2024",
+    "tagPublicSpeaking": "Oratória",
+    "speechBody": "Reconhecido por apresentação em formato pitch sobre o impacto da Inteligência Artificial no dia a dia."
+  },
+  "currentlyBuilding": {
+    "heading": "Construindo Agora",
+    "placeholder": "Captura NET",
+    "projectTitle": "NET – Neurodiverse Educational Testing",
+    "tagInProgress": "Em Andamento",
+    "tagMultiAgent": "IA Multiagente",
+    "tagRag": "RAG",
+    "tagEdtech": "EdTech",
+    "description": "Uma plataforma multiagente com IA para triagem educacional neurodiversa. Inclui um agente conversacional com guardrails, retrieval semântico RAG comparado a uma base de conhecimento sobre transtornos de aprendizagem, e geração automatizada de relatórios em PDF com recomendações de encaminhamento especializado.",
+    "viewGithub": "Ver no GitHub"
+  },
+  "drives": {
+    "whatTitle": "O Que Me Motiva",
+    "whatQuote": "\"Mentalidade de produto, forte autonomia de execução e a capacidade de conectar mundos técnicos e não técnicos.\"",
+    "whatP1": "Prospero na interseção entre pesquisa em IA e construção de produtos reais. Minha formação em engenharia me ensinou a decompor problemas complexos em soluções práticas, enquanto minha experiência em criação de conteúdo aprimorou minha capacidade de comunicar para diferentes audiências, de desenvolvedores a stakeholders de negócios.",
+    "whatP2": "Experiência internacional estudando nos EUA, combinada com trabalho contínuo em temas avançados de IA, me mantém aprendendo rápido e me adaptando a novas ferramentas e desafios. Sou movido por impacto: transformar pesquisa de ponta em produtos que as pessoas realmente usam.",
+    "whatImageAlt": "Thiago trabalhando em um projeto",
+    "whoTitle": "Quem Me Motiva",
+    "whoQuote": "\"As pessoas que acreditam em você antes dos resultados chegarem.\"",
+    "whoP1": "Minha família e amigos próximos são a base de tudo que construo. Mudar do Brasil para os EUA para cursar meu mestrado só foi possível por causa das pessoas que me apoiaram e incentivaram ao longo do caminho.",
+    "whoP2": "Também sou inspirado pela comunidade crescente do SIEG IA. Cada seguidor que interage, faz perguntas e aprende comigo reforça por que faço este trabalho. Construir em público significa construir com pessoas.",
+    "whoImageAlt": "Inspiração pessoal"
+  },
+  "documents": {
+    "heading": "Documentos Importantes",
+    "resumeLabel": "Currículo"
+  },
+  "compact": {
+    "name": "Thiago Costa",
+    "email": "tabrantedaco2023 at fau dot edu",
+    "bio0": "Mestrado em IA na Florida Atlantic University. Construindo soluções de IA, sistemas multiagentes e escalando conteúdo sobre Inteligência Artificial.",
+    "bio1": "Engenheiro de IA na NET, criador do SIEG IA (100 mil+ seguidores), e apaixonado por conectar pesquisa a produtos reais.",
+    "linkInstagram": "Instagram",
+    "linkGithub": "GitHub",
+    "linkLinkedin": "LinkedIn",
+    "projectsHeading": "Projetos",
+    "errorPrefix": "Erro: ",
+    "github": "GitHub",
+    "liveDemo": "Demo ao Vivo",
+    "showLess": "Mostrar Menos",
+    "viewAllProjects": "Ver Todos os Projetos"
+  },
+  "recentContent": {
+    "loadingTitle": "Conteúdo Recente",
+    "errorHint": "Tente atualizar a página ou volte mais tarde.",
+    "blogTitle": "Post Recente do Blog",
+    "viewAllBlog": "Ver todos →",
+    "blogIntro": "Escrever e pesquisar me permitem explorar ideias em profundidade e compartilhar minhas descobertas. Meu blog é onde documento minha jornada de aprendizado, compartilho insights técnicos e ocasionalmente mergulho em questões filosóficas sobre tecnologia e seu impacto.",
+    "blogFooter": "Tento escrever regularmente sobre minhas descobertas de pesquisa, desafios técnicos interessantes e reflexões sobre o futuro da tecnologia. Meu objetivo é compartilhar conhecimento que seja perspicaz e acessível.",
+    "paperTitle": "Artigo Recente",
+    "viewAllPapers": "Ver todos →",
+    "paperIntro": "Meu trabalho de pesquisa inclui artigos acadêmicos, relatórios técnicos e outros trabalhos científicos. Eles representam minhas contribuições para a comunidade científica e áreas onde concentrei meus esforços de pesquisa."
+  },
+  "projectSec": {
+    "heading": "Projetos Atuais",
+    "viewAll": "Ver todos →",
+    "intro": "Construir projetos significativos é como traduzo minhas ideias em realidade. Cada projeto representa um problema que achei vale a pena resolver ou uma pergunta que quis explorar. Embora tenha muitos interesses, estes projetos em destaque mostram meu foco atual em criar ferramentas práticas que ajudem pessoas a aprender, trabalhar e pesquisar de forma mais eficaz.",
+    "errorPrefix": "Erro: ",
+    "errorHint": "Tente atualizar a página ou volte mais tarde.",
+    "footer": "Estes projetos são apenas uma pequena amostra do meu trabalho. Estou constantemente construindo e experimentando novas ideias. Confira meu GitHub para mais ou entre em contato se quiser colaborar!"
+  },
+  "researchSec": {
+    "heading": "Pesquisa",
+    "viewAll": "Ver todos →",
+    "intro": "Minha pesquisa foca na aplicação de machine learning e IA para resolver problemas do mundo real. Tenho particular interesse em modelos de visão-linguagem, transformers e construção de sistemas inteligentes que ampliem as capacidades humanas.",
+    "errorPrefix": "Erro: ",
+    "errorHint": "Tente atualizar a página ou volte mais tarde."
+  },
+  "blog": {
+    "loading": "Carregando posts...",
+    "fetchError": "Falha ao carregar posts. Tente novamente mais tarde.",
+    "title": "Blog",
+    "filterTag": "Tag",
+    "filterType": "Tipo",
+    "emptyBase": "Nenhum post encontrado",
+    "emptyWithTag": " com a tag \"{{tag}}\"",
+    "emptyWithType": " do tipo \"{{type}}\"",
+    "clearFilters": "Limpar filtros"
+  },
+  "blogPost": {
+    "loading": "Carregando post...",
+    "errorPrefix": "Erro: ",
+    "notFound": "Post não encontrado",
+    "backToBlog": "← Voltar ao Blog"
+  },
+  "projects": {
+    "loading": "Carregando projetos...",
+    "errorPrefix": "Erro: ",
+    "refreshHint": "Tente atualizar a página",
+    "empty": "Nenhum projeto encontrado",
+    "title": "Projetos",
+    "filterByTag": "Filtrar por Tag"
+  },
+  "projectView": {
+    "loading": "Carregando projeto...",
+    "errorPrefix": "Erro: ",
+    "notFound": "Projeto não encontrado",
+    "backToProjects": "← Voltar aos Projetos",
+    "github": "GitHub →",
+    "liveDemo": "Demo ao Vivo →"
+  },
+  "papers": {
+    "loading": "Carregando artigos...",
+    "fetchError": "Falha ao carregar artigos. Tente novamente mais tarde.",
+    "title": "Artigos",
+    "filterTag": "Tag",
+    "filterType": "Tipo",
+    "emptyBase": "Nenhum artigo encontrado",
+    "emptyWithTag": " com a tag \"{{tag}}\"",
+    "emptyWithType": " do tipo \"{{type}}\"",
+    "clearFilters": "Limpar filtros"
+  },
+  "readingList": {
+    "loading": "Carregando lista de leitura...",
+    "fetchError": "Falha ao carregar lista de leitura. Tente novamente mais tarde.",
+    "title": "Lista de Leitura",
+    "filterTag": "Tag",
+    "emptyBase": "Nenhum artigo encontrado",
+    "emptyWithTag": " com a tag \"{{tag}}\"",
+    "clearFilters": "Limpar filtros",
+    "addedLabel": "Adicionado: "
+  },
+  "bookshelf": {
+    "title": "Minha Estante",
+    "filterCategory": "Categoria",
+    "intro": "Uma coleção curada de livros que moldaram meu pensamento e jornada de aprendizado.",
+    "coverAlt": "Capa de {{title}}",
+    "readPrefix": "Lido: ",
+    "viewBook": "Ver Livro →"
+  },
+  "blogPostCard": {
+    "untitled": "Post Sem Título",
+    "badgePdf": "PDF",
+    "badgeMd": "MD",
+    "noDescription": "Sem descrição disponível",
+    "openPdf": "Abrir PDF em nova aba",
+    "readMore": "Leia mais →"
+  },
+  "projectCard": {
+    "github": "GitHub",
+    "liveDemo": "Demo ao Vivo",
+    "viewProject": "Ver Projeto"
+  },
+  "markdown": {
+    "copy": "Copiar",
+    "copied": "Copiado!"
+  },
+  "git": {
+    "chartAlt": "Gráfico de contribuições do GitHub de {{username}}",
+    "linkTitle": "GitHub",
+    "legendLess": "Menos",
+    "legendMore": "Mais"
+  },
+  "clap": {
+    "loadError": "Não foi possível carregar as palmas. Tente novamente mais tarde.",
+    "updateError": "Falha ao atualizar. Tente novamente.",
+    "ariaLabel": "aplaudir",
+    "tooltipTotal": "Total de palmas"
+  },
+  "projectIndicators": {
+    "clever": "Genial",
+    "launchIt": "Lance Já",
+    "inspired": "Inspirado",
+    "loadError": "Não foi possível carregar. Tente novamente mais tarde.",
+    "updateError": "Falha ao atualizar. Tente novamente."
+  },
+  "errorBoundary": {
+    "title": "Erro Inesperado... Tente atualizar a página.",
+    "body": "Desculpe por isso, acho que meu código não é tão bom quanto eu pensava.",
+    "urgent": "POR FAVOR ENVIE ISSO PARA QUE EU POSSA CORRIGIR!!!",
+    "thanksTitle": "Obrigado pelo seu relatório!",
+    "thanksBody": "Vamos analisar este problema o mais rápido possível.",
+    "returnHome": "Voltar ao Início",
+    "emailLabel": "Seu Email (opcional)",
+    "emailPlaceholder": "seu.email@exemplo.com",
+    "messageLabel": "Por favor me conte tudo para que eu possa corrigir este erro. O que você estava fazendo quando o erro ocorreu?",
+    "messagePlaceholder": "Eu estava tentando...",
+    "submit": "Enviar Relatório",
+    "submitting": "Enviando...",
+    "footerNote": "Os detalhes do erro serão incluídos automaticamente no seu relatório."
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro"
+  }
+}

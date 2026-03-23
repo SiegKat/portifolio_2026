@@ -1,0 +1,316 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog",
+    "readingList": "Reading List",
+    "bookshelf": "Bookshelf",
+    "toggleMenuAria": "Toggle menu"
+  },
+  "header": {
+    "profileAlt": "Profile photo",
+    "name": "Thiago Costa",
+    "email": "tabrantedaco2023[at]fau[dot]edu",
+    "bio": "M.S. in AI at Florida Atlantic University. Building AI solutions, multi-agent systems, and scaling content about Artificial Intelligence.",
+    "roleAi": "AI Engineer.",
+    "roleCreator": "Content Creator.",
+    "roleProduct": "Product Thinker.",
+    "instagramSiegTitle": "Instagram @sieg.ia",
+    "githubTitle": "GitHub",
+    "linkedinTitle": "LinkedIn",
+    "instagramThiagoTitle": "Instagram @thiago.sieg",
+    "themeTitle": "Current theme: {{theme}}. Click to toggle.",
+    "themeAria": "Toggle color theme",
+    "langToggleAria": "Toggle language",
+    "langLabel": "EN"
+  },
+  "tldr": {
+    "heading": "TL;DR",
+    "currently": "Currently I am...",
+    "degreeLink": "pursuing my M.S. in AI at Florida Atlantic University",
+    "buildingAt": ", building AI products at",
+    "and": "and",
+    "followersEnd": ", and creating content about AI for 100k+ followers."
+  },
+  "about": {
+    "introP1": "I'm a Brazilian AI engineer and M.S. student at Florida Atlantic University, passionate about turning complex AI concepts into practical products. From multi-agent systems and RAG pipelines to deep learning models, I love bridging the gap between research and real-world solutions.",
+    "introP2": "Beyond engineering, I believe in the power of communication. Through SIEG IA I translate cutting-edge AI topics into accessible content for a community of over 100k followers, combining technical depth with clear storytelling.",
+    "cardAiTitle": "AI & Machine Learning",
+    "cardAiBody": "Multi-agent systems, RAG, deep learning, NLP, prompt engineering and model evaluation with PyTorch, LangChain, and vector databases.",
+    "cardProductTitle": "Product & Prototyping",
+    "cardProductBody": "End-to-end prototype development, connecting interfaces, orchestration and output flows into functional AI-powered products.",
+    "cardCommTitle": "Technical Communication",
+    "cardCommBody": "Making complex AI topics accessible through content creation, bridging technical and non-technical audiences with 100M+ views in 2025.",
+    "followCta": "Follow SIEG IA"
+  },
+  "work": {
+    "heading": "Work Experience",
+    "netDate": "Nov 2025 – Present",
+    "netCompany": "NET – Neurodiverse Educational Testing",
+    "netRole": "AI Engineer · Startup",
+    "netDescP1": "Built the Web UI and integrated a multi-agent architecture for AI-assisted educational screening. Implemented a conversational agent with guardrails for structured context collection, a RAG pipeline with semantic retrieval and knowledge-base matching for learning disorders, and a PDF report generator with recommendations and specialist referrals.",
+    "netDescP2": "Connected interface, orchestration, and output flow into a functional prototype. Project recognized with 2nd place at the FAU Agentic AI Hackathon 2025.",
+    "siegDate": "May 2025 – Present",
+    "siegCompany": "SIEG IA",
+    "siegRole": "Creator & Manager · AI Content Channel",
+    "siegDesc": "Built and scaled a content channel focused on AI news and trends, reaching over 100k followers and 100M+ views in 2025. Translates complex technical topics into accessible communication, building authority in AI, trend reading, and market positioning.",
+    "siegLink": "@sieg.ia →"
+  },
+  "education": {
+    "heading": "Education",
+    "fauLogo": "FAU",
+    "fauYears": "2024 – 2026",
+    "fauSchool": "Florida Atlantic University",
+    "fauDegree": "M.S. in Artificial Intelligence · Boca Raton, FL, USA",
+    "fauAchievement1Title": "2nd Place – FAU Agentic AI Hackathon 2025",
+    "fauAchievement1Body": "Recognized for the NET project, a multi-agent AI solution for neurodiverse educational support.",
+    "fauFocusTitle": "Focus Areas",
+    "fauFocusBody": "Multi-agent systems, RAG, deep learning, NLP, and data-driven experimentation.",
+    "uffLogo": "UFF",
+    "uffMeYears": "2020 – 2022",
+    "uffSchool": "Universidade Federal Fluminense",
+    "uffMeDegree": "B.S. in Mechanical Engineering · Volta Redonda, RJ, Brazil",
+    "uffMeAchievement1Title": "Rocket Launch Team – Project Leader",
+    "uffMeAchievement1Body": "Led a university rocket launch team, managing design and execution.",
+    "uffMeAchievement2Title": "Teaching Assistant – Fluid Mechanics",
+    "uffMeAchievement2Body": "Assisted in teaching and mentoring students in Fluid Mechanics coursework.",
+    "uffCpYears": "2017 – 2020",
+    "uffCpDegree": "B.S. in Computational Physics · Volta Redonda, RJ, Brazil",
+    "uffCpNoteTitle": "Transitioned to Engineering",
+    "uffCpNoteBody": "Built a strong foundation in computational methods, mathematics, and physics before transitioning to Mechanical Engineering."
+  },
+  "skills": {
+    "heading": "Technical Expertise",
+    "coreSkills": "Core Skills",
+    "categoryAiMl": "AI & Machine Learning",
+    "categoryLibs": "Libraries & Frameworks",
+    "categoryDataTools": "Data & Tools",
+    "levelAdvanced": "Advanced",
+    "levelProficient": "Proficient",
+    "programmingLangs": "Languages",
+    "spokenLangs": "Spoken Languages",
+    "native": "Native",
+    "fluent": "Fluent",
+    "intermediate": "Intermediate"
+  },
+  "socials": {
+    "heading": "Socials",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "intro": "Follow my AI content, projects, and daily life on social media!",
+    "siegTitle": "SIEG IA",
+    "siegInitials": "SI",
+    "siegName": "SIEG IA",
+    "siegHandle": "@sieg.ia",
+    "siegMeta": "100k+ followers · AI content",
+    "siegCta": "Follow @sieg.ia",
+    "personalTitle": "Personal",
+    "personalInitials": "TC",
+    "personalName": "Thiago Costa",
+    "personalHandle": "@thiago.sieg",
+    "personalMeta": "Personal account",
+    "personalCta": "Follow @thiago.sieg",
+    "linkedinTitle": "LinkedIn",
+    "linkedinInitials": "TC",
+    "linkedinName": "Thiago Costa",
+    "linkedinPath": "/in/thiagosieg",
+    "linkedinCta": "Connect on LinkedIn",
+    "footer": "Connect with me for updates on AI projects, content, and professional opportunities!"
+  },
+  "recentActivity": {
+    "heading": "Recent Activity",
+    "hackathonTitle": "2nd Place – FAU Agentic AI Hackathon 2025",
+    "tagAward": "Award",
+    "tagMultiAgent": "Multi-Agent AI",
+    "tagHackathon": "Hackathon",
+    "hackathonBody": "Recognized for the NET project, a multi-agent AI solution to support neurodiverse students and their families through AI-assisted educational screening, RAG-based knowledge retrieval, and automated report generation.",
+    "speechTitle": "2nd Place – Three Minutes International Speech Competition 2024",
+    "tagPublicSpeaking": "Public Speaking",
+    "speechBody": "Recognized for a pitch-format presentation on the impact of Artificial Intelligence in everyday life."
+  },
+  "currentlyBuilding": {
+    "heading": "Currently Building",
+    "placeholder": "NET Screenshot",
+    "projectTitle": "NET – Neurodiverse Educational Testing",
+    "tagInProgress": "In Progress",
+    "tagMultiAgent": "Multi-Agent AI",
+    "tagRag": "RAG",
+    "tagEdtech": "EdTech",
+    "description": "An AI-powered multi-agent platform for neurodiverse educational screening. Features a conversational agent with guardrails, semantic RAG retrieval matched against a knowledge base of learning disorders, and automated PDF report generation with specialist referral recommendations.",
+    "viewGithub": "View on GitHub"
+  },
+  "drives": {
+    "whatTitle": "What Drives Me",
+    "whatQuote": "\"Product mindset, strong execution autonomy, and the ability to bridge technical and non-technical worlds.\"",
+    "whatP1": "I thrive at the intersection of AI research and real-world product building. My engineering background taught me to decompose complex problems into practical solutions, while my experience in content creation sharpened my ability to communicate across audiences, from developers to business stakeholders.",
+    "whatP2": "International experience studying in the US, combined with continuous hands-on work in advanced AI topics, keeps me learning fast and adapting to new tools and challenges. I'm driven by impact: turning cutting-edge research into products that people actually use.",
+    "whatImageAlt": "Thiago working on a project",
+    "whoTitle": "Who Drives Me",
+    "whoQuote": "\"The people who believe in you before the results arrive.\"",
+    "whoP1": "My family and close friends are the foundation of everything I build. Moving from Brazil to the US to pursue my Master's was only possible because of the people who supported and encouraged me along the way.",
+    "whoP2": "I'm also inspired by the growing community around SIEG IA. Every follower who engages, asks questions, and learns alongside me reinforces why I do this work. Building in public means building with people.",
+    "whoImageAlt": "Personal inspiration"
+  },
+  "documents": {
+    "heading": "Important Documents",
+    "resumeLabel": "Resume"
+  },
+  "compact": {
+    "name": "Thiago Costa",
+    "email": "tabrantedaco2023 at fau dot edu",
+    "bio0": "M.S. in AI at Florida Atlantic University. Building AI solutions, multi-agent systems, and scaling content about Artificial Intelligence.",
+    "bio1": "AI Engineer at NET, creator of SIEG IA (100k+ followers), and passionate about bridging research and real-world products.",
+    "linkInstagram": "Instagram",
+    "linkGithub": "GitHub",
+    "linkLinkedin": "LinkedIn",
+    "projectsHeading": "Projects",
+    "errorPrefix": "Error: ",
+    "github": "GitHub",
+    "liveDemo": "Live Demo",
+    "showLess": "Show Less",
+    "viewAllProjects": "View All Projects"
+  },
+  "recentContent": {
+    "loadingTitle": "Recent Content",
+    "errorHint": "Please try refreshing the page or check back later.",
+    "blogTitle": "Recent Blog Post",
+    "viewAllBlog": "View all →",
+    "blogIntro": "Writing and research allow me to explore ideas in depth and share my discoveries with others. My blog is where I document my learning journey, share technical insights, and occasionally dive into philosophical questions about technology and its impact.",
+    "blogFooter": "I try to write regularly about my research findings, interesting technical challenges, and thoughts on technology's future. My goal is to share knowledge that's both insightful and accessible.",
+    "paperTitle": "Recent Paper",
+    "viewAllPapers": "View all →",
+    "paperIntro": "My research work includes academic papers, technical reports, and other scholarly papers. These represent my contributions to the scientific community and areas where I've focused my research efforts."
+  },
+  "projectSec": {
+    "heading": "Current Projects",
+    "viewAll": "View all →",
+    "intro": "Building meaningful projects is how I translate my ideas into reality. Each project represents a problem I found worth solving or a question I wanted to explore. While I have many interests, these featured projects showcase my current focus on creating practical tools that help people learn, work, and research more effectively.",
+    "errorPrefix": "Error: ",
+    "errorHint": "Please try refreshing the page or check back later.",
+    "footer": "These projects are just a small sample of my work. I'm constantly building and experimenting with new ideas. Check out my GitHub for more or reach out if you'd like to collaborate!"
+  },
+  "researchSec": {
+    "heading": "Research",
+    "viewAll": "View all →",
+    "intro": "My research focuses on applying machine learning and AI to solve real-world problems. I'm particularly interested in vision-language models, transformers, and building intelligent systems that enhance human capabilities.",
+    "errorPrefix": "Error: ",
+    "errorHint": "Please try refreshing the page or check back later."
+  },
+  "blog": {
+    "loading": "Loading posts...",
+    "fetchError": "Failed to load blog posts. Please try again later.",
+    "title": "Blog",
+    "filterTag": "Tag",
+    "filterType": "Type",
+    "emptyBase": "No posts found",
+    "emptyWithTag": " with tag \"{{tag}}\"",
+    "emptyWithType": " of type \"{{type}}\"",
+    "clearFilters": "Clear filters"
+  },
+  "blogPost": {
+    "loading": "Loading post...",
+    "errorPrefix": "Error: ",
+    "notFound": "Post not found",
+    "backToBlog": "← Back to Blog"
+  },
+  "projects": {
+    "loading": "Loading projects...",
+    "errorPrefix": "Error: ",
+    "refreshHint": "Please try refreshing the page",
+    "empty": "No projects found",
+    "title": "Projects",
+    "filterByTag": "Filter by Tag"
+  },
+  "projectView": {
+    "loading": "Loading project...",
+    "errorPrefix": "Error: ",
+    "notFound": "Project not found",
+    "backToProjects": "← Back to Projects",
+    "github": "GitHub →",
+    "liveDemo": "Live Demo →"
+  },
+  "papers": {
+    "loading": "Loading papers...",
+    "fetchError": "Failed to load papers. Please try again later.",
+    "title": "Papers",
+    "filterTag": "Tag",
+    "filterType": "Type",
+    "emptyBase": "No papers found",
+    "emptyWithTag": " with tag \"{{tag}}\"",
+    "emptyWithType": " of type \"{{type}}\"",
+    "clearFilters": "Clear filters"
+  },
+  "readingList": {
+    "loading": "Loading reading list...",
+    "fetchError": "Failed to load reading list. Please try again later.",
+    "title": "Reading List",
+    "filterTag": "Tag",
+    "emptyBase": "No papers found",
+    "emptyWithTag": " with tag \"{{tag}}\"",
+    "clearFilters": "Clear filters",
+    "addedLabel": "Added: "
+  },
+  "bookshelf": {
+    "title": "My Bookshelf",
+    "filterCategory": "Category",
+    "intro": "A curated collection of books that have shaped my thinking and learning journey.",
+    "coverAlt": "Cover of {{title}}",
+    "readPrefix": "Read: ",
+    "viewBook": "View Book →"
+  },
+  "blogPostCard": {
+    "untitled": "Untitled Post",
+    "badgePdf": "PDF",
+    "badgeMd": "MD",
+    "noDescription": "No description available",
+    "openPdf": "Open PDF in new tab",
+    "readMore": "Read more →"
+  },
+  "projectCard": {
+    "github": "GitHub",
+    "liveDemo": "Live Demo",
+    "viewProject": "View Project"
+  },
+  "markdown": {
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "git": {
+    "chartAlt": "{{username}}'s GitHub contribution chart",
+    "linkTitle": "GitHub",
+    "legendLess": "Less",
+    "legendMore": "More"
+  },
+  "clap": {
+    "loadError": "Could not load claps. Please try again later.",
+    "updateError": "Failed to update. Please try again.",
+    "ariaLabel": "clap",
+    "tooltipTotal": "Total claps"
+  },
+  "projectIndicators": {
+    "clever": "Clever",
+    "launchIt": "Launch It",
+    "inspired": "Inspired",
+    "loadError": "Could not load count. Please try again later.",
+    "updateError": "Failed to update. Please try again."
+  },
+  "errorBoundary": {
+    "title": "Unexpected Error... Try refreshing the page.",
+    "body": "Sorry about this, i guess my code is not as good as i thought.",
+    "urgent": "PLEASE SUBMIT THIS SO I CAN FIX IT!!!",
+    "thanksTitle": "Thank you for your report!",
+    "thanksBody": "We'll look into this issue as soon as possible.",
+    "returnHome": "Return to Home",
+    "emailLabel": "Your Email (optional)",
+    "emailPlaceholder": "your.email@example.com",
+    "messageLabel": "Please tell me everything so i can fix this error. What were you doing when the error occurred?",
+    "messagePlaceholder": "I was trying to...",
+    "submit": "Submit Report",
+    "submitting": "Submitting...",
+    "footerNote": "Error details will be included automatically with your report."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error"
+  }
+}
