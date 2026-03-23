@@ -23,7 +23,7 @@ export default function CompactAbout({
 }: CompactAboutProps) {
   const { t } = useTranslation();
   const [showAllProjects, setShowAllProjects] = useState(false);
-  const defaultProfileData = {
+  const defaultProfileData: NonNullable<CompactAboutProps["profileData"]> = {
     name: t("compact.name"),
     email: t("compact.email"),
     bio: [

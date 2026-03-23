@@ -40,6 +40,7 @@ const books: Book[] = [
 ];
 
 export default function Bookshelf() {
+  const { t, i18n } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState("");
   const [searchParams] = useSearchParams();
 
@@ -140,10 +141,13 @@ export default function Bookshelf() {
               {book.dateRead && (
                 <time dateTime={book.dateRead}>
                   {t("bookshelf.readPrefix")}
-                  {new Date(book.dateRead).toLocaleDateString(i18n.language, {
+                  {new Date(book.dateRead).toLocaleDateString(
+                    i18n.language?.startsWith("pt") ? "pt-BR" : "en-US",
+                    {
                     year: "numeric",
                     month: "long",
-                  })}
+                  },
+                  )}
                 </time>
               )}
               {book.link && (
