@@ -1,16 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Brain, Rocket, Lightbulb } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import "../styles/animations.css";
-import { generateClient } from "aws-amplify/data";
-import type { Schema } from "../../amplify/data/resource";
 import NumberDisplay from "./NumberDisplay";
 
-// Generate a type-safe client for our Amplify backend
-const client = generateClient<Schema>();
+const COUNTS_KEY = "projectIndicatorCounts";
+const INTERACTIONS_KEY = "projectIndicators";
 
-// Local storage key for indicators
-const INDICATORS_KEY = "projectIndicators";
+let amplifyClient: any = null;
+
+async function getAmplifyClient() {
+  if (amplifyClient !== undefined && amplifyClient !== null) return amplifyClient;
+  try {
+    const { generateClient } = await import("aws-amplify/data");
+    amplifyClient = generateClient();
+    return amplifyClient;
+  } catch {
+    amplifyClient = null;
+  }
+  return null;
+}
+
+function getLocalCount(indicatorId: string): number {
+  try {
+    const raw = localStorage.getItem(COUNTS_KEY);
+    const counts = raw ? JSON.parse(raw) : {};
+    return counts[indicatorId] ?? 0;
+  } catch {
+    return 0;
+  }
+}
+
+function setLocalCount(indicatorId: string, value: number) {
+  try {
+    const raw = localStorage.getItem(COUNTS_KEY);
+    const counts = raw ? JSON.parse(raw) : {};
+    counts[indicatorId] = value;
+    localStorage.setItem(COUNTS_KEY, JSON.stringify(counts));
+  } catch { /* ignore */ }
+}
 
 type IndicatorType = "clever" | "launch" | "inspired";
 
@@ -33,134 +61,76 @@ const AnimatedIndicator: React.FC<AnimatedIndicatorProps> = ({
   projectId,
   compact = false,
 }) => {
-  const { t } = useTranslation();
-  const [count, setCount] = useState<number | null>(null);
+  const [count, setCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [hasInteracted, setHasInteracted] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const [showTooltip, setShowTooltip] = useState<boolean>(false);
   const [showCountIndicator, setShowCountIndicator] = useState<boolean>(false);
-  hasInteracted;
+  const clientRef = useRef<any>(null);
 
-  // Create a unique ID for this indicator
   const indicatorId = `${projectId}_${indicatorType}`;
 
-  // Load initial state from localStorage
-  useEffect(() => {
-    try {
-      const indicatorsJson = localStorage.getItem(INDICATORS_KEY);
-      const indicators = indicatorsJson ? JSON.parse(indicatorsJson) : {};
-      setHasInteracted(!!indicators[indicatorId]);
-    } catch (err) {
-      console.error("Error reading from localStorage:", err);
-    }
-  }, [indicatorId]);
-
-  // Load the current count from the database
   useEffect(() => {
     let isMounted = true;
 
-    async function fetchIndicatorCount() {
-      if (!isMounted) return;
-      setIsLoading(true);
-      setError(null);
+    async function init() {
+      const localCount = getLocalCount(indicatorId);
+      if (isMounted) setCount(localCount);
 
       try {
-        // Try to find an existing indicator record
-        const response = await client.models.ProjectIndicator.get({
-          id: indicatorId,
-        });
-
-        if (isMounted) {
-          if (response.data) {
-            // Record exists, update the count
-            setCount(response.data.count);
-          } else {
-            // No record exists yet, initialize with count=0
-            setCount(0);
-
-            // Create a new record silently (don't wait for it)
-            client.models.ProjectIndicator.create({
-              id: indicatorId,
-              count: 0,
-              indicatorType,
-              projectId,
-            }).catch((err: Error) => {
-              console.error(
-                `Error creating initial ${indicatorType} indicator record:`,
-                err,
-              );
-            });
+        const client = await getAmplifyClient();
+        if (client && isMounted) {
+          clientRef.current = client;
+          const response = await client.models.ProjectIndicator.get({ id: indicatorId });
+          if (isMounted && response.data) {
+            const remoteCount = response.data.count ?? 0;
+            const best = Math.max(remoteCount, localCount);
+            setCount(best);
+            setLocalCount(indicatorId, best);
           }
         }
-      } catch (err) {
-        if (isMounted) {
-          console.error(
-            `Error fetching ${indicatorType} indicator count:`,
-            err,
-          );
-          setError(t("projectIndicators.loadError"));
-          // Set to 0 on error to avoid showing loading state indefinitely
-          setCount(0);
-        }
+      } catch {
+        // Amplify unavailable; localStorage counts are used
       } finally {
-        if (isMounted) {
-          setIsLoading(false);
-        }
+        if (isMounted) setIsLoading(false);
       }
     }
 
-    fetchIndicatorCount();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [indicatorId, indicatorType, projectId]);
+    init();
+    return () => { isMounted = false; };
+  }, [indicatorId]);
 
   const handleClick = async () => {
     if (isLoading) return;
 
-    const currentCount = count ?? 0;
-    const newCount = currentCount + 1;
+    const newCount = count + 1;
 
-    // Trigger animation
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 500);
-
-    // Show count indicator with animation
     setShowCountIndicator(true);
-    setTimeout(() => {
-      setShowCountIndicator(false);
-    }, 2000);
+    setTimeout(() => setShowCountIndicator(false), 2000);
 
-    // Optimistically update UI
     setCount(newCount);
-    setHasInteracted(true);
-    setError(null);
+    setLocalCount(indicatorId, newCount);
 
     try {
-      // Update localStorage
-      const indicatorsJson = localStorage.getItem(INDICATORS_KEY);
-      const indicators = indicatorsJson ? JSON.parse(indicatorsJson) : {};
+      const raw = localStorage.getItem(INTERACTIONS_KEY);
+      const interactions = raw ? JSON.parse(raw) : {};
+      interactions[indicatorId] = true;
+      localStorage.setItem(INTERACTIONS_KEY, JSON.stringify(interactions));
+    } catch { /* ignore */ }
 
-      // Store the interaction for this indicator
-      indicators[indicatorId] = true;
-      localStorage.setItem(INDICATORS_KEY, JSON.stringify(indicators));
-
-      // Update the database - use upsert pattern to handle both create and update
-      await client.models.ProjectIndicator.update({
-        id: indicatorId,
-        count: newCount,
-        indicatorType,
-        projectId,
-      });
-    } catch (err) {
-      console.error(`Error updating ${indicatorType} indicator count:`, err);
-
-      // Revert optimistic update on error
-      setCount(currentCount);
-      setError(t("projectIndicators.updateError"));
+    if (clientRef.current) {
+      try {
+        await clientRef.current.models.ProjectIndicator.update({
+          id: indicatorId,
+          count: newCount,
+          indicatorType,
+          projectId,
+        });
+      } catch {
+        // Remote sync failed; local count is preserved
+      }
     }
   };
 
@@ -201,13 +171,10 @@ const AnimatedIndicator: React.FC<AnimatedIndicatorProps> = ({
           </button>
         </div>
 
-        {/* Counter - now horizontally aligned */}
         <div className={`ml-${compact ? "2" : "3"}`}>
-          <NumberDisplay value={count ?? 0} />
+          <NumberDisplay value={count} />
         </div>
       </div>
-
-      {error && <div className="text-red-500 text-xs mt-1">{error}</div>}
     </div>
   );
 };

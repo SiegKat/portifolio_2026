@@ -1,14 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { generateClient } from "aws-amplify/data";
-import type { Schema } from "../../amplify/data/resource";
 import NumberDisplay from "./NumberDisplay";
 
-// Generate a type-safe client for our Amplify backend
-const client = generateClient<Schema>();
-
-// Local storage key for clapped posts
+const CLAP_COUNTS_KEY = "clapCounts";
 const CLAPPED_POSTS_KEY = "clappedPosts";
+
+let amplifyClient: any = null;
+
+async function getAmplifyClient() {
+  if (amplifyClient !== undefined && amplifyClient !== null) return amplifyClient;
+  try {
+    const { generateClient } = await import("aws-amplify/data");
+    amplifyClient = generateClient();
+    return amplifyClient;
+  } catch {
+    amplifyClient = null;
+  }
+  return null;
+}
+
+function getLocalClapCount(postId: string): number {
+  try {
+    const raw = localStorage.getItem(CLAP_COUNTS_KEY);
+    const counts = raw ? JSON.parse(raw) : {};
+    return counts[postId] ?? 0;
+  } catch {
+    return 0;
+  }
+}
+
+function setLocalClapCount(postId: string, value: number) {
+  try {
+    const raw = localStorage.getItem(CLAP_COUNTS_KEY);
+    const counts = raw ? JSON.parse(raw) : {};
+    counts[postId] = value;
+    localStorage.setItem(CLAP_COUNTS_KEY, JSON.stringify(counts));
+  } catch { /* ignore */ }
+}
 
 interface ClapButtonProps {
   postId: string;
@@ -19,91 +47,52 @@ interface ClapButtonProps {
 
 const ClapButton: React.FC<ClapButtonProps> = ({ postId, onClap }) => {
   const { t } = useTranslation();
-  const [clapCount, setClapCount] = useState<number | null>(null);
+  const [clapCount, setClapCount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [hasClapped, setHasClapped] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const [showClapIndicator, setShowClapIndicator] = useState<boolean>(false);
   const [clapIncrement, setClapIncrement] = useState<number>(0);
   const [showTooltip, setShowTooltip] = useState<boolean>(false);
-  hasClapped;
-  error;
+  const clientRef = useRef<any>(null);
 
-  // Load initial state from localStorage
-  useEffect(() => {
-    try {
-      const clappedPostsJson = localStorage.getItem(CLAPPED_POSTS_KEY);
-      const clappedPosts = clappedPostsJson ? JSON.parse(clappedPostsJson) : {};
-      // Store clap count per post ID in localStorage
-      setHasClapped(!!clappedPosts[postId]);
-    } catch (err) {
-      console.error("Error reading from localStorage:", err);
-    }
-  }, [postId]);
-
-  // Load the current clap count from the database
   useEffect(() => {
     let isMounted = true;
 
-    async function fetchClapCount() {
-      if (!isMounted) return;
-      setIsLoading(true);
-      setError(null);
+    async function init() {
+      const localCount = getLocalClapCount(postId);
+      if (isMounted) setClapCount(localCount);
 
       try {
-        // Try to find an existing clap record for this post
-        const response = await client.models.BlogPostLike.get({ id: postId });
-
-        if (isMounted) {
-          if (response.data) {
-            // Record exists, update the clap count
-            setClapCount(response.data.count);
-          } else {
-            // No record exists yet, initialize with count=0
-            setClapCount(0);
-
-            // Create a new record silently (don't wait for it)
-            client.models.BlogPostLike.create({
-              id: postId,
-              count: 0,
-            }).catch((err: Error) => {
-              console.error("Error creating initial clap record:", err);
-            });
+        const client = await getAmplifyClient();
+        if (client && isMounted) {
+          clientRef.current = client;
+          const response = await client.models.BlogPostLike.get({ id: postId });
+          if (isMounted && response.data) {
+            const remoteCount = response.data.count ?? 0;
+            const best = Math.max(remoteCount, localCount);
+            setClapCount(best);
+            setLocalClapCount(postId, best);
           }
         }
-      } catch (err) {
-        if (isMounted) {
-          console.error("Error fetching clap count:", err);
-          setError(t("clap.loadError"));
-          // Set to 0 on error to avoid showing loading state indefinitely
-          setClapCount(0);
-        }
+      } catch {
+        // Amplify unavailable; localStorage counts are used
       } finally {
-        if (isMounted) {
-          setIsLoading(false);
-        }
+        if (isMounted) setIsLoading(false);
       }
     }
 
-    fetchClapCount();
-
-    return () => {
-      isMounted = false;
-    };
+    init();
+    return () => { isMounted = false; };
   }, [postId]);
 
   const handleClap = async () => {
     if (isLoading) return;
 
-    const currentCount = clapCount ?? 0;
-    const newCount = currentCount + 1;
+    const newCount = clapCount + 1;
 
-    // Trigger animation
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 500);
 
-    // Show clap indicator
     setClapIncrement((prev) => prev + 1);
     setShowClapIndicator(true);
     setTimeout(() => {
@@ -111,35 +100,28 @@ const ClapButton: React.FC<ClapButtonProps> = ({ postId, onClap }) => {
       setClapIncrement(0);
     }, 2000);
 
-    // Optimistically update UI
     setClapCount(newCount);
-    setHasClapped(true);
-    setError(null);
+    setLocalClapCount(postId, newCount);
 
     try {
-      // Update localStorage
-      const clappedPostsJson = localStorage.getItem(CLAPPED_POSTS_KEY);
-      const clappedPosts = clappedPostsJson ? JSON.parse(clappedPostsJson) : {};
-
-      // Store the clap count for this post
+      const raw = localStorage.getItem(CLAPPED_POSTS_KEY);
+      const clappedPosts = raw ? JSON.parse(raw) : {};
       clappedPosts[postId] = true;
       localStorage.setItem(CLAPPED_POSTS_KEY, JSON.stringify(clappedPosts));
+    } catch { /* ignore */ }
 
-      // Update the database - use upsert pattern to handle both create and update
-      await client.models.BlogPostLike.update({
-        id: postId,
-        count: newCount,
-      });
-
-      // Call the onClap callback if provided
-      if (onClap) onClap(newCount);
-    } catch (err) {
-      console.error("Error updating clap count:", err);
-
-      // Revert optimistic update on error
-      setClapCount(currentCount);
-      setError(t("clap.updateError"));
+    if (clientRef.current) {
+      try {
+        await clientRef.current.models.BlogPostLike.update({
+          id: postId,
+          count: newCount,
+        });
+      } catch {
+        // Remote sync failed; local count is preserved
+      }
     }
+
+    if (onClap) onClap(newCount);
   };
 
   return (

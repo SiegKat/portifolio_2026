@@ -22,7 +22,6 @@ const currentProjectIds: string[] = [];
 export default function About() {
   const [currentProjects, setCurrentProjects] = useState<ProjectType[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Add a class to the document to ensure dark mode is respected
@@ -39,12 +38,9 @@ export default function About() {
           currentProjectIds.includes(project.id),
         );
         setCurrentProjects(filteredProjects);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-        setError(
-          error instanceof Error ? error.message : "Failed to fetch projects",
-        );
+      } catch {
+        setCurrentProjects([]);
+      } finally {
         setLoading(false);
       }
     };
@@ -73,7 +69,7 @@ export default function About() {
       <ProjectsSection
         projects={currentProjects}
         loading={loading}
-        error={error}
+        error={null}
       />
       <Socials />
       <WhatDrivesMe />

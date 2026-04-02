@@ -6,6 +6,52 @@ import ProjectIndicators from "../components/ProjectIndicators";
 import { CONTENT_BASE_URL } from "../config";
 import { useTranslation } from "react-i18next";
 
+const EXTRA_PROJECT_META: Record<
+  string,
+  Omit<Project, "content"> & { contentUrl: string }
+> = {
+  "portifolio-2026": {
+    id: "portifolio-2026",
+    title: "Personal Portfolio",
+    description:
+      "Bilingual (EN/PT) portfolio built with React, TypeScript, Vite, and Tailwind CSS. Features i18n with auto locale detection, dark/light themes, Framer Motion animations, and AWS Amplify backend integration.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "i18n"],
+    githubLink: "https://github.com/SiegKat/portifolio_2026",
+    contentUrl:
+      "https://raw.githubusercontent.com/SiegKat/portifolio_2026/main/README.md",
+  },
+  "chess-model": {
+    id: "chess-model",
+    title: "Chess Engine (Deep Learning)",
+    description:
+      "A chess engine powered by a residual CNN with dual-head (policy + value), trained via supervised imitation learning on expert human games.",
+    tags: ["AI", "Deep Learning", "PyTorch", "Chess"],
+    githubLink: "https://github.com/SiegKat/chess-model",
+    contentUrl:
+      "https://raw.githubusercontent.com/SiegKat/chess-model/main/README.md",
+  },
+  "btc-lstm-forecast": {
+    id: "btc-lstm-forecast",
+    title: "Crypto Price Prediction (LSTM + RL)",
+    description:
+      "End-to-end BTC/USDT forecasting with Bidirectional LSTM, MC-Dropout uncertainty estimation, and a PPO reinforcement learning trading agent trained on Binance data.",
+    tags: ["AI", "Deep Learning", "TensorFlow", "Reinforcement Learning", "Finance"],
+    githubLink: "https://github.com/SiegKat/btc-lstm-forecast",
+    contentUrl:
+      "https://raw.githubusercontent.com/SiegKat/btc-lstm-forecast/main/README.md",
+  },
+  "rl-project": {
+    id: "rl-project",
+    title: "Actor-Critic for CartPole",
+    description:
+      "A portfolio-ready PyTorch Actor-Critic agent for CartPole-v1, refactored from coursework into a reproducible ML project with CLI, tests, saved artifacts, and documentation.",
+    tags: ["AI", "Reinforcement Learning", "PyTorch", "Gymnasium"],
+    githubLink: "https://github.com/SiegKat/rl_project",
+    contentUrl:
+      "https://raw.githubusercontent.com/SiegKat/rl_project/main/README.md",
+  },
+};
+
 interface Project {
   id: string;
   title: string;
@@ -26,16 +72,24 @@ export default function ProjectView() {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const response = await fetch(
-          `${CONTENT_BASE_URL}/projects/${id}.md`,
-        );
+        const extra = id ? EXTRA_PROJECT_META[id] : undefined;
+
+        // Prefer built-in projects (for deploy portability)
+        if (extra) {
+          const contentRes = await fetch(extra.contentUrl);
+          if (!contentRes.ok) throw new Error("Project not found");
+          const content = await contentRes.text();
+          setProject({ ...extra, content });
+          setLoading(false);
+          return;
+        }
+
+        const response = await fetch(`${CONTENT_BASE_URL}/projects/${id}.md`);
         if (!response.ok) throw new Error("Project not found");
         const content = await response.text();
 
         // Fetch project metadata
-        const metaResponse = await fetch(
-          `${CONTENT_BASE_URL}/projects.json`,
-        );
+        const metaResponse = await fetch(`${CONTENT_BASE_URL}/projects.json`);
         if (!metaResponse.ok)
           throw new Error("Failed to fetch project metadata");
         const projects = await metaResponse.json();
