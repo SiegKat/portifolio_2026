@@ -10,6 +10,24 @@ const EXTRA_PROJECT_META: Record<
   string,
   Omit<Project, "content"> & { contentUrl: string }
 > = {
+  "net-edu": {
+    id: "net-edu",
+    title: "N.E.T. (Neurodiverse Educational Testing)",
+    description:
+      "A multi-agent AI platform that orchestrates specialized LLM workflows, from conversational intake to adaptive assessment to document generation, helping families identify learning differences and produce actionable accommodation plans in under 15 minutes.",
+    tags: ["React", "TypeScript", "Supabase", "n8n", "Claude API", "NLP", "Accessibility"],
+    demoLink: "https://net-dev.vercel.app/onboarding",
+    contentUrl: "/content/projects/net-edu.md",
+  },
+  "sieg-ai": {
+    id: "sieg-ai",
+    title: "SIEG AI",
+    description:
+      "AI tools discovery and evaluation platform with 80+ cataloged tools, multi-language support for 17 languages, and integrated AI chat. Built with React, TypeScript, and Supabase.",
+    tags: ["React", "TypeScript", "Supabase", "Tailwind CSS", "i18next", "Vite"],
+    demoLink: "https://siegai.com",
+    contentUrl: "/content/projects/sieg-ai.md",
+  },
   "portifolio-2026": {
     id: "portifolio-2026",
     title: "Personal Portfolio",
