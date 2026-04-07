@@ -68,6 +68,15 @@ const EXTRA_PROJECT_META: Record<
     contentUrl:
       "https://raw.githubusercontent.com/SiegKat/rl_project/main/README.md",
   },
+  "spotify-artist-network-analysis": {
+    id: "spotify-artist-network-analysis",
+    title: "Spotify Artist Network Analysis",
+    description:
+      "Large-scale graph analysis of roughly 156,000 Spotify artists and their connections using PySpark for distributed processing and NetworkX for centrality, clustering, and popularity prediction.",
+    tags: ["PySpark", "NetworkX", "Python", "Graph Analytics", "Data Science"],
+    githubLink: "https://github.com/SiegKat/spotify-artist-network-analysis",
+    contentUrl: "/content/projects/spotify-artist-network-analysis.md",
+  },
 };
 
 interface Project {

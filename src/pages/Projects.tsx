@@ -54,6 +54,14 @@ const EXTRA_PROJECTS: Project[] = [
     tags: ["AI", "Reinforcement Learning", "PyTorch", "Gymnasium"],
     githubLink: "https://github.com/SiegKat/rl_project",
   },
+  {
+    id: "spotify-artist-network-analysis",
+    title: "Spotify Artist Network Analysis",
+    description:
+      "Large-scale graph analysis of roughly 156,000 Spotify artists and their connections using PySpark for distributed processing and NetworkX for centrality, clustering, and popularity prediction.",
+    tags: ["PySpark", "NetworkX", "Python", "Graph Analytics", "Data Science"],
+    githubLink: "https://github.com/SiegKat/spotify-artist-network-analysis",
+  },
 ];
 
 export default function Projects() {
