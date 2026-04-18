@@ -13,9 +13,16 @@ export default function EducationSection() {
       >
         <div className="flex flex-col md:flex-row gap-6">
           <div className="md:w-1/4 flex flex-col items-center">
-            <div className="w-32 h-32 rounded-lg overflow-hidden relative">
-              <img src="/assets/logos/fau.png" alt="FAU" className="w-full h-full object-contain" />
-            </div>
+            <a
+              href="https://www.fau.edu/registrar/university-catalog/catalog/engineering/#msai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+            >
+              <div className="w-32 h-32 rounded-lg overflow-hidden relative">
+                <img src="/assets/logos/fau.png" alt="FAU" className="w-full h-full object-contain" />
+              </div>
+            </a>
             <div className="mt-4 text-center">
               <span className="px-2 py-1 text-xs rounded-full bg-[color-mix(in_oklch,var(--color-primary)_15%,transparent)]">
                 {t("education.fauYears")}

@@ -13,14 +13,30 @@ export default function WorkExperienceSection() {
         >
           <div className="flex flex-col md:flex-row md:items-start gap-4">
             <div className="md:w-1/4">
-              <div className="w-16 h-16 rounded-full overflow-hidden">
-                <img src="/assets/logos/net.png" alt="NET" className="w-full h-full object-cover" />
-              </div>
+              <a
+                href="https://net-dev.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+              >
+                <div className="w-16 h-16 rounded-full overflow-hidden">
+                  <img src="/assets/logos/net.png" alt="NET" className="w-full h-full object-cover" />
+                </div>
+              </a>
               <p className="text-sm mt-2 opacity-75">{t("work.netDate")}</p>
             </div>
 
             <div className="md:w-3/4">
-              <h3 className="text-xl font-semibold">{t("work.netCompany")}</h3>
+              <h3 className="text-xl font-semibold">
+                <a
+                  href="https://net-dev.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+                >
+                  {t("work.netCompany")}
+                </a>
+              </h3>
               <p className="text-base font-medium text-[color-mix(in_oklch,var(--color-primary)_90%,currentColor)]">
                 {t("work.netRole")}
               </p>

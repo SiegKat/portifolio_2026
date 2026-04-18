@@ -30,7 +30,12 @@ export default function TLDR() {
           SIEG IA
         </a>
         {" "}{t("tldr.and")}{" "}
-        <a className="text-adaptive">
+        <a
+          href="https://net-dev.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[var(--color-primary)] hover:underline"
+        >
           NET
         </a>
         {t("tldr.followersEnd")}

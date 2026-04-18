@@ -83,8 +83,8 @@ export default function Header() {
                 </p>
                 <div className="flex flex-row flex-wrap gap-2 text-sm md:text-base lg:text-lg">
                   <span className="text-orange-400">{t("header.roleAi")}</span>
-                  <span className="text-green-400">{t("header.roleCreator")}</span>
-                  <span>{t("header.roleProduct")}</span>
+                  <span className="text-green-400">{t("header.roleResearcher")}</span>
+                  <span>{t("header.rolePractitioner")}</span>
                 </div>
               </div>
 
