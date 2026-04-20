@@ -42,8 +42,8 @@ const EXTRA_PROJECTS: Project[] = [
     id: "btc-lstm-forecast",
     title: "Crypto Price Prediction (LSTM + RL)",
     description:
-      "End-to-end BTC/USDT forecasting with Bidirectional LSTM, MC-Dropout uncertainty estimation, and a PPO reinforcement learning trading agent trained on Binance data.",
-    tags: ["AI", "Deep Learning", "TensorFlow", "Reinforcement Learning", "Finance"],
+      "End-to-end BTC/USDT pipeline that ingests Binance data, engineers technical indicators, compares Bidirectional and MC-Dropout LSTM forecasts, and explores PPO-based trading strategies.",
+    tags: ["AI", "Deep Learning", "Time Series", "TensorFlow", "Reinforcement Learning", "Finance"],
     githubLink: "https://github.com/SiegKat/btc-lstm-forecast",
   },
   {

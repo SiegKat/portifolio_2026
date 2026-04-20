@@ -52,8 +52,8 @@ const EXTRA_PROJECT_META: Record<
     id: "btc-lstm-forecast",
     title: "Crypto Price Prediction (LSTM + RL)",
     description:
-      "End-to-end BTC/USDT forecasting with Bidirectional LSTM, MC-Dropout uncertainty estimation, and a PPO reinforcement learning trading agent trained on Binance data.",
-    tags: ["AI", "Deep Learning", "TensorFlow", "Reinforcement Learning", "Finance"],
+      "End-to-end BTC/USDT pipeline that ingests Binance data, engineers technical indicators, compares Bidirectional and MC-Dropout LSTM forecasts, and explores PPO-based trading strategies.",
+    tags: ["AI", "Deep Learning", "Time Series", "TensorFlow", "Reinforcement Learning", "Finance"],
     githubLink: "https://github.com/SiegKat/btc-lstm-forecast",
     contentUrl:
       "https://raw.githubusercontent.com/SiegKat/btc-lstm-forecast/main/README.md",
@@ -83,6 +83,7 @@ interface Project {
   id: string;
   title: string;
   content: string;
+  contentUrl?: string;
   description: string;
   demoLink?: string;
   githubLink?: string;
@@ -106,7 +107,7 @@ export default function ProjectView() {
           const contentRes = await fetch(extra.contentUrl);
           if (!contentRes.ok) throw new Error("Project not found");
           const content = await contentRes.text();
-          setProject({ ...extra, content });
+          setProject({ ...extra, content, contentUrl: extra.contentUrl });
           setLoading(false);
           return;
         }
@@ -124,7 +125,11 @@ export default function ProjectView() {
 
         if (!projectMeta) throw new Error("Project metadata not found");
 
-        setProject({ ...projectMeta, content });
+        setProject({
+          ...projectMeta,
+          content,
+          contentUrl: `${CONTENT_BASE_URL}/projects/${id}.md`,
+        });
         setLoading(false);
       } catch (error) {
         console.error("Error fetching project:", error);
@@ -218,7 +223,11 @@ export default function ProjectView() {
         </div>
       </div>
 
-      <MarkdownRenderer content={project.content} className="mt-8" />
+      <MarkdownRenderer
+        content={project.content}
+        className="mt-8"
+        sourceUrl={project.contentUrl}
+      />
     </motion.article>
   );
 }

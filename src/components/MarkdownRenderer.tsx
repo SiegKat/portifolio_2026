@@ -12,6 +12,25 @@ import {
 interface MarkdownRendererProps {
   content: string;
   className?: string;
+  sourceUrl?: string;
+}
+
+function resolveMarkdownUrl(
+  url: string | undefined,
+  sourceUrl?: string,
+): string | undefined {
+  if (!url || url.startsWith("#")) return url;
+  if (/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(url)) return url;
+
+  try {
+    const baseUrl = sourceUrl
+      ? new URL(sourceUrl, window.location.origin)
+      : new URL(window.location.href);
+    return new URL(url, baseUrl).toString();
+  } catch (error) {
+    console.error("Failed to resolve markdown URL:", error);
+    return url;
+  }
 }
 
 // Custom hook for dark mode detection
@@ -131,6 +150,7 @@ function extractYoutubeVideoId(url: string): string | null {
 export default function MarkdownRenderer({
   content,
   className = "",
+  sourceUrl,
 }: MarkdownRendererProps) {
   const { t } = useTranslation();
 
@@ -139,6 +159,7 @@ export default function MarkdownRenderer({
       <Markdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
+        urlTransform={(url) => resolveMarkdownUrl(url, sourceUrl) ?? ""}
         components={{
           code(
             props: ComponentPropsWithoutRef<"code"> & {
