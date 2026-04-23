@@ -59,6 +59,13 @@ export default function RecentActivity() {
           <p className="text-lg mb-4">
             {t("recentActivity.speechBody")}
           </p>
+          <div className="mt-4 rounded-xl overflow-hidden border border-[color-mix(in_oklch,var(--color-primary)_20%,transparent)]">
+            <img
+              src="/assets/About/speech-award.jpg"
+              alt={t("recentActivity.speechTitle")}
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

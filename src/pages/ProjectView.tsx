@@ -52,7 +52,7 @@ const EXTRA_PROJECT_META: Record<
     id: "btc-lstm-forecast",
     title: "Crypto Price Prediction (LSTM + RL)",
     description:
-      "End-to-end BTC/USDT pipeline that ingests Binance data, engineers technical indicators, compares Bidirectional and MC-Dropout LSTM forecasts, and explores PPO-based trading strategies.",
+      "BTC/USDT forecasting pipeline on 15-minute Binance Vision candles. Engineers indicators (RSI, MACD, Bollinger, ATR, OBV) and benchmarks Bidirectional vs. MC-Dropout LSTM with uncertainty quantification. MC-Dropout cuts 1-month RMSE from $921 to $364, alongside a PPO trading agent. Skill holds through roughly one month, then decays with regime drift.",
     tags: ["AI", "Deep Learning", "Time Series", "TensorFlow", "Reinforcement Learning", "Finance"],
     githubLink: "https://github.com/SiegKat/btc-lstm-forecast",
     contentUrl:

@@ -19,6 +19,8 @@ import { CONTENT_BASE_URL, GITHUB_USERNAME } from "../config";
 
 const currentProjectIds: string[] = [];
 
+const SHOW_GITHUB_CHART = false;
+
 export default function About() {
   const [currentProjects, setCurrentProjects] = useState<ProjectType[]>([]);
   const [loading, setLoading] = useState(true);
@@ -65,7 +67,7 @@ export default function About() {
       <AboutSection />
       <WorkExperienceSection />
       <EducationSection />
-      <GitHubChart username={GITHUB_USERNAME} />
+      {SHOW_GITHUB_CHART && <GitHubChart username={GITHUB_USERNAME} />}
       <ProjectsSection
         projects={currentProjects}
         loading={loading}
