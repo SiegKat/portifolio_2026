@@ -34,7 +34,7 @@ const EXTRA_PROJECTS: Project[] = [
     id: "chess-model",
     title: "Chess Engine (Deep Learning)",
     description:
-      "A chess engine powered by a residual CNN with dual-head (policy + value), trained via supervised imitation learning on expert human games.",
+      "Dual-head (policy + value) residual CNN trained via supervised imitation learning on expert human games. Investigates how far supervised pretraining alone can push play strength before self-play or search is added.",
     tags: ["AI", "Deep Learning", "PyTorch", "Chess"],
     githubLink: "https://github.com/SiegKat/chess-model",
   },
@@ -50,7 +50,7 @@ const EXTRA_PROJECTS: Project[] = [
     id: "rl-project",
     title: "Actor-Critic for CartPole",
     description:
-      "A portfolio-ready PyTorch Actor-Critic agent for CartPole-v1, refactored from coursework into a reproducible ML project with CLI, tests, saved artifacts, and documentation.",
+      "Actor-Critic agent (PyTorch) for CartPole-v1, refactored from coursework into a reproducible ML pipeline: CLI, unit tests, saved checkpoints, and documentation. Intended as a minimal, verified baseline for future RL experiments.",
     tags: ["AI", "Reinforcement Learning", "PyTorch", "Gymnasium"],
     githubLink: "https://github.com/SiegKat/rl_project",
   },
@@ -58,9 +58,17 @@ const EXTRA_PROJECTS: Project[] = [
     id: "spotify-artist-network-analysis",
     title: "Spotify Artist Network Analysis",
     description:
-      "Large-scale graph analysis of roughly 156,000 Spotify artists and their connections using PySpark for distributed processing and NetworkX for centrality, clustering, and popularity prediction.",
+      "Graph analysis of roughly 156,000 Spotify artists and their connections. PySpark for distributed processing; NetworkX for centrality, clustering, and popularity prediction. Studies which centrality measures carry signal for downstream popularity forecasting.",
     tags: ["PySpark", "NetworkX", "Python", "Graph Analytics", "Data Science"],
     githubLink: "https://github.com/SiegKat/spotify-artist-network-analysis",
+  },
+  {
+    id: "prompt-strategy",
+    title: "Prompt Strategy Lab",
+    description:
+      "Comparative testing framework for nine prompt engineering strategies (Chain-of-Thought, Reflection, Few-Shot, Self-Consistency, and more), evaluated under identical conditions on a local TinyLLaMA via Ollama. Captures latency, token usage, and qualitative output per strategy. Findings: Few-Shot wins for structured output; Self-Consistency triples latency with marginal gains; Reflection-on-CoT breaks down on small models, suggesting limited multi-step meta-reasoning at 1.1B parameters.",
+    tags: ["AI", "LLMs", "Prompt Engineering", "Evaluation", "Python"],
+    githubLink: "https://github.com/SiegKat/prompt-strategy",
   },
 ];
 

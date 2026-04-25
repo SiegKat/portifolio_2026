@@ -27,16 +27,16 @@
   "tldr": {
     "heading": "TL;DR",
     "currently": "Atualmente eu estou...",
-    "degreeLink": "cursando Mestrado em IA na Florida Atlantic University",
+    "degreeLink": "recém-formado no Mestrado em IA pela Florida Atlantic University",
     "buildingAt": ", construindo produtos de IA na",
     "and": "e",
     "followersEnd": ", e criando conteúdo sobre IA para mais de 100 mil seguidores."
   },
   "about": {
-    "introP1": "Sou um engenheiro de IA brasileiro e mestrando na Florida Atlantic University, apaixonado por transformar conceitos complexos de IA em soluções práticas e aplicadas. De sistemas multiagentes e pipelines RAG a modelos de deep learning, adoro conectar pesquisa a soluções do mundo real.",
+    "introP1": "Sou engenheiro de IA e mestrando em Inteligência Artificial na Florida Atlantic University, atuando em duas frentes igualmente importantes: entregar produtos aplicados de IA e fazer pesquisa rigorosa em ML. A frente aplicada cobre sistemas multiagentes, pipelines RAG e ferramentas baseadas em LLMs. A frente de pesquisa foca em quantificação de incerteza em previsão via deep learning e em orquestração multiagente com LLMs, com atenção a baselines, avaliação e reprodutibilidade.",
     "introP2": "Além da engenharia, acredito no poder da comunicação. Através do SIEG IA, traduzo temas de IA de ponta em conteúdo acessível para uma comunidade de mais de 100 mil seguidores, combinando profundidade técnica com storytelling claro.",
     "cardAiTitle": "IA & Machine Learning",
-    "cardAiBody": "Sistemas multiagentes, RAG, deep learning, NLP, engenharia de prompts e avaliação de modelos com PyTorch, LangChain e bancos vetoriais.",
+    "cardAiBody": "Sistemas multiagentes, RAG, deep learning, NLP. Avaliação rigorosa de modelos com baselines, ablations e estimação de incerteza (MC-Dropout, intervalos de predição) usando PyTorch, TensorFlow, LangChain e bancos vetoriais.",
     "cardProductTitle": "Produto & Prototipagem",
     "cardProductBody": "Desenvolvimento de protótipos ponta a ponta, conectando interfaces, orquestração e fluxos de saída em produtos funcionais com IA.",
     "cardCommTitle": "Comunicação Técnica",
@@ -66,6 +66,8 @@
     "fauAchievement1Body": "Reconhecido pelo projeto NET, solução multiagente de IA para apoio educacional neurodiverso.",
     "fauFocusTitle": "Áreas de Foco",
     "fauFocusBody": "Sistemas multiagentes, RAG, deep learning, NLP e experimentação orientada por dados.",
+    "fauResearchTitle": "Interesses de Pesquisa",
+    "fauResearchBody": "Sistemas multiagentes e orquestração com LLMs; quantificação de incerteza em previsão de séries temporais via deep learning.",
     "uffLogo": "UFF",
     "uffMeYears": "2020 – 2022",
     "uffSchool": "Universidade Federal Fluminense",
@@ -142,12 +144,12 @@
   "drives": {
     "whatTitle": "O Que Me Motiva",
     "whatQuote": "\"Fundamentado na teoria, forte autonomia de execução e a capacidade de conectar pesquisa e aplicação no mundo real.\"",
-    "whatP1": "Prospero na interseção entre pesquisa em IA e aplicação no mundo real. Minha formação em engenharia me ensinou a decompor problemas complexos em soluções práticas, enquanto minha experiência comunicando ideias técnicas aprimorou minha capacidade de alcançar diferentes audiências, de desenvolvedores a stakeholders de negócios.",
-    "whatP2": "Experiência internacional estudando nos EUA, combinada com trabalho contínuo em temas avançados de IA, me mantém aprendendo rápido e me adaptando a novas ferramentas e desafios. Sou movido por impacto: transformar pesquisa de ponta em sistemas que as pessoas realmente usam.",
+    "whatP1": "Atuo na interseção entre pesquisa em ML e aplicação no mundo real. A engenharia me ensinou a decompor problemas complexos em soluções práticas. O trabalho de pesquisa me mantém honesto quanto a baselines, avaliação e o que significa 'funcionar' de fato. A prática de comunicação me permite explicar os dois lados para audiências técnicas e não técnicas.",
+    "whatP2": "Trabalho contínuo em temas avançados de IA me mantém aprendendo rápido e me adaptando a novas ferramentas e desafios. Sou movido por impacto nos dois lados: entregar IA aplicada que as pessoas realmente usam, e produzir pesquisa de ML que resiste ao escrutínio.",
     "whatImageAlt": "Thiago trabalhando em um projeto",
     "whoTitle": "Quem Me Motiva",
     "whoQuote": "\"As pessoas que acreditam em você antes dos resultados chegarem.\"",
-    "whoP1": "Minha família e amigos próximos são a base de tudo que construo. Mudar do Brasil para os EUA para cursar meu mestrado só foi possível por causa das pessoas que me apoiaram e incentivaram ao longo do caminho.",
+    "whoP1": "Minha família e amigos próximos são a base de tudo que construo. Cursar meu mestrado só foi possível por causa das pessoas que me apoiaram e incentivaram ao longo do caminho.",
     "whoP2": "Também sou inspirado pela comunidade crescente do SIEG IA. Cada seguidor que interage, faz perguntas e aprende comigo reforça por que faço este trabalho. Construir em público significa construir com pessoas.",
     "whoImageAlt": "Inspiração pessoal"
   },
@@ -179,7 +181,7 @@
     "blogFooter": "Tento escrever regularmente sobre minhas descobertas de pesquisa, desafios técnicos interessantes e reflexões sobre o futuro da tecnologia. Meu objetivo é compartilhar conhecimento que seja perspicaz e acessível.",
     "paperTitle": "Artigo Recente",
     "viewAllPapers": "Ver todos →",
-    "paperIntro": "Meu trabalho de pesquisa inclui artigos acadêmicos, relatórios técnicos e outros trabalhos científicos. Eles representam minhas contribuições para a comunidade científica e áreas onde concentrei meus esforços de pesquisa."
+    "paperIntro": "Artigos, relatórios técnicos e write-ups de disciplinas refletindo meus interesses de pesquisa: orquestração multiagente com LLMs e quantificação de incerteza em previsão via deep learning."
   },
   "projectSec": {
     "heading": "Projetos Atuais",
@@ -192,7 +194,7 @@
   "researchSec": {
     "heading": "Pesquisa",
     "viewAll": "Ver todos →",
-    "intro": "Minha pesquisa foca na aplicação de machine learning e IA para resolver problemas do mundo real. Tenho particular interesse em modelos de visão-linguagem, transformers e construção de sistemas inteligentes que ampliem as capacidades humanas.",
+    "intro": "Meus interesses de pesquisa estão centrados em sistemas multiagentes e orquestração com LLMs, e em quantificação de incerteza em previsão de séries temporais via deep learning. Projetos e write-ups abaixo.",
     "errorPrefix": "Erro: ",
     "errorHint": "Tente atualizar a página ou volte mais tarde."
   },
