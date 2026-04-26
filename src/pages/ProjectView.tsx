@@ -87,6 +87,26 @@ const EXTRA_PROJECT_META: Record<
     contentUrl:
       "https://raw.githubusercontent.com/SiegKat/prompt-strategy/main/README.md",
   },
+  "clinical-ai-tool-agent": {
+    id: "clinical-ai-tool-agent",
+    title: "Clinical AI Tool Agent",
+    description:
+      "LangChain ReAct agent that reasons about patient vitals, deciding when to invoke deterministic clinical calculators (BMI, MAP, Anion Gap) versus retrieve from a local FAISS-indexed medical knowledge base. Runs entirely on TinyLLaMA via Ollama with a custom text-based Action/Action Input protocol, since the model lacks native function calling. Key finding: the dominant failure mode was malformed LLM outputs, not calculation errors; lower temperature, explicit format examples, and token limits sharply reduced malformation rates.",
+    tags: ["AI", "LLMs", "Agents", "RAG", "LangChain"],
+    githubLink: "https://github.com/SiegKat/clinical-ai-tool-agent",
+    contentUrl:
+      "https://raw.githubusercontent.com/SiegKat/clinical-ai-tool-agent/main/README.md",
+  },
+  "mcp-agent-blackboard": {
+    id: "mcp-agent-blackboard",
+    title: "MCP Research Collective",
+    description:
+      "Multi-agent research system on the Model Context Protocol (MCP). Three specialized agents (Planner, Researcher, Reasoner) coordinate exclusively through a thread-safe blackboard with TTL, regex querying, and tag filtering. No point-to-point messaging: forcing every state mutation through one chokepoint makes the system trivially observable and lets new agents drop in with only the blackboard contract. Ships both an in-process connector for tests and a FastMCP STDIO server for Claude Desktop integration.",
+    tags: ["AI", "LLMs", "Multi-Agent", "MCP", "Orchestration"],
+    githubLink: "https://github.com/SiegKat/mcp-agent-blackboard",
+    contentUrl:
+      "https://raw.githubusercontent.com/SiegKat/mcp-agent-blackboard/main/README.md",
+  },
 };
 
 interface Project {
