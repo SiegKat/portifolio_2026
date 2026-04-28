@@ -16,7 +16,7 @@ const EXTRA_PROJECT_META: Record<
     description:
       "A multi-agent AI platform that orchestrates specialized LLM workflows, from conversational intake to adaptive assessment to document generation, helping families identify learning differences and produce actionable accommodation plans in under 15 minutes.",
     tags: ["React", "TypeScript", "Supabase", "n8n", "Claude API", "NLP", "Accessibility"],
-    demoLink: "https://net-dev.vercel.app/onboarding",
+    demoLink: "https://net-support-n9at85egr-siegkats-projects.vercel.app",
     contentUrl: "/content/projects/net-edu.md",
   },
   "sieg-ai": {

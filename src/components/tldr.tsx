@@ -31,7 +31,7 @@ export default function TLDR() {
         </a>
         {" "}{t("tldr.and")}{" "}
         <a
-          href="https://net-dev.vercel.app"
+          href="https://net-support-n9at85egr-siegkats-projects.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--color-primary)] hover:underline"

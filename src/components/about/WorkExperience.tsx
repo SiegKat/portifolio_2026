@@ -14,7 +14,7 @@ export default function WorkExperienceSection() {
           <div className="flex flex-col md:flex-row md:items-start gap-4">
             <div className="md:w-1/4">
               <a
-                href="https://net-dev.vercel.app"
+                href="https://net-support-n9at85egr-siegkats-projects.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
@@ -29,7 +29,7 @@ export default function WorkExperienceSection() {
             <div className="md:w-3/4">
               <h3 className="text-xl font-semibold">
                 <a
-                  href="https://net-dev.vercel.app"
+                  href="https://net-support-n9at85egr-siegkats-projects.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
